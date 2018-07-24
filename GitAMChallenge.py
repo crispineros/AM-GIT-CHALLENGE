@@ -39,6 +39,8 @@ def actualizar_producto():
 
 #----------------------------------------------------------------------------------------------------------
 
+#Test -3
+
 @app.route('/delete', methods=['DELETE'])
 def eliminar_producto():
     if request.method == "DELETE":
