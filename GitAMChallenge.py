@@ -26,6 +26,17 @@ def insertar_producto():
         db.commit()
         return("se ha agregado a "+ data["Name"])
 
+#----------------------------------------------------------------------------------------------------------
+
+@app.route('/post', methods=['POST'])
+def actualizar_producto():
+    if request.method == "POST":
+        data = request.get_json()
+        sql_command2 ="UPDATE sys.workers SET Age=Age+1 WHERE Name='%s'" % (data["Name"])       
+        cursor.execute(sql_command2)
+        db.commit()
+        return("se ha modificado la  edad de "+ data["Name"])
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True, port=5000)
