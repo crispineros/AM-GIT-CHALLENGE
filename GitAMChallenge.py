@@ -37,6 +37,15 @@ def actualizar_producto():
         db.commit()
         return("se ha modificado la  edad de "+ data["Name"])
 
+#----------------------------------------------------------------------------------------------------------
 
+@app.route('/delete', methods=['DELETE'])
+def eliminar_producto():
+    if request.method == "DELETE":
+        data = request.get_json()
+        sql_command2 ="DELETE FROM sys.workers WHERE Name='%s'" % (data["Name"])       
+        cursor.execute(sql_command2)
+        db.commit()
+        return("se ha borrado a "+ data["Name"])
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True, port=5000)
