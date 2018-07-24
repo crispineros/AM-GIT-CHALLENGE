@@ -39,7 +39,7 @@ def actualizar_producto():
 
 #----------------------------------------------------------------------------------------------------------
 
-#Test -3
+#Test Diego Felipe Gaitan Hidalgo
 
 @app.route('/delete', methods=['DELETE'])
 def eliminar_producto():
